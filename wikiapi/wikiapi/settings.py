@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'wikiapi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'movie_database.sqlite3',
+        'NAME': BASE_DIR / 'api_database.sqlite3',
     }
 }
 
@@ -104,6 +104,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
+REST_FRAMEWORK = {
+	'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+	'PAGE_SIZE': 20,
+}
+
 
 LANGUAGE_CODE = 'en-us'
 
